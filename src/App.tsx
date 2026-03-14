@@ -16,6 +16,7 @@ import Services from "./components/Services";
 const App = () => {
   return (
     <>
+      {/* Top padding accounts for fixed header height; overflow-hidden avoids horizontal scroll from animations. */}
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
         <Hero />
@@ -27,6 +28,7 @@ const App = () => {
         <Footer />
       </div>
 
+      {/* Rendered once so Button components can reference gradient defs (btn-left, btn-top, etc.) by id. */}
       <ButtonGradient />
     </>
   );

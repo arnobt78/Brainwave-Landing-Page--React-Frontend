@@ -5,7 +5,7 @@ export interface CompanyLogosProps {
 }
 
 /**
- * Row of company/partner logos with a short tagline.
+ * Row of company/partner logos with a short tagline. Data from constants.companyLogos. Shown in Hero on desktop.
  */
 const CompanyLogos = ({ className }: CompanyLogosProps) => {
   return (

@@ -4,6 +4,7 @@ import Button from "./Button";
 
 /**
  * Renders the list of pricing tiers (Basic, Premium, Enterprise) with features and CTA.
+ * When price is null (Enterprise), CTA is "Contact us" with mailto; otherwise "Get started" links to /pricing. white=true for paid tiers.
  */
 const PricingList = () => {
   return (
@@ -32,7 +33,7 @@ const PricingList = () => {
 
           <Button
             className="w-full mb-6"
-            href={item.price != null ? "/pricing" : "mailto:contact@jsmastery.pro"}
+            href={item.price != null ? "/pricing" : "mailto:contact@email.com"}
             white={item.price != null}
           >
             {item.price != null ? "Get started" : "Contact us"}

@@ -7,7 +7,7 @@ export interface NotificationProps {
 }
 
 /**
- * Notification card: avatar image, title, and list of small thumbnails.
+ * Notification card: avatar (notification1), title, and list of small thumbnails (notificationImages). Used in Hero.
  */
 const Notification = ({ className, title }: NotificationProps) => {
   return (

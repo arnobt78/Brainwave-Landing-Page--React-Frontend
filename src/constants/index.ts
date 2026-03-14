@@ -40,6 +40,7 @@ import {
   yourlogo,
 } from "../assets";
 
+/* TypeScript interfaces: define shapes of data used by Header, Pricing, Roadmap, Benefits, Footer, etc. */
 export interface NavItem {
   id: string;
   title: string;
@@ -96,6 +97,7 @@ export interface SocialItem {
   url: string;
 }
 
+/* Header nav: url is hash (e.g. #features). onlyMobile: true = show only in mobile menu. */
 export const navigation: NavItem[] = [
   { id: "0", title: "Features", url: "#features" },
   { id: "1", title: "Pricing", url: "#pricing" },
@@ -105,6 +107,7 @@ export const navigation: NavItem[] = [
   { id: "5", title: "Sign in", url: "#login", onlyMobile: true },
 ];
 
+/* Icons shown in the hero parallax strip (left side on desktop). */
 export const heroIcons: string[] = [homeSmile, file02, searchMd, plusSquare];
 
 export const notificationImages: string[] = [
@@ -191,6 +194,7 @@ export const collabApps: CollabApp[] = [
   { id: "7", title: "Raindrop", icon: raindrop, width: 38, height: 32 },
 ];
 
+/* Pricing tiers: price null = "Contact us" CTA (e.g. Enterprise). */
 export const pricing: PricingItem[] = [
   {
     id: "0",

@@ -1,3 +1,4 @@
+/* Google Fonts: Sora (headings/body), Source Code Pro (code/buttons), Space Grotesk (taglines). */
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
@@ -6,6 +7,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Design tokens: font families and dark color-scheme hint for browser UI. */
 :root {
   --font-sora: "Sora", sans-serif;
   --font-code: "Source Code Pro", monospace;
@@ -13,6 +15,7 @@
   color-scheme: dark;
 }
 
+/* Smooth scroll when navigating to #anchor links (e.g. #features, #pricing). */
 * {
   scroll-behavior: smooth
 }

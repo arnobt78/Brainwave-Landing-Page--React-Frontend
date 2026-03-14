@@ -1,12 +1,16 @@
+import { motion } from "framer-motion";
 import { benefits } from "../constants";
 import Heading from "./Heading";
 import Section from "./Section";
 import Arrow from "../assets/svg/Arrow";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
+import { staggerContainer, staggerItem } from "../lib/motion";
 
 /**
  * Benefits section: grid of feature cards with icons and ClipPath shape.
+ * Each card uses a background image (backgroundUrl), icon (iconUrl), and optional hover image (imageUrl).
+ * light: true adds GradientLight overlay. ClipPath defines the card shape (id="benefits").
  */
 const Benefits = () => {
   return (
@@ -17,14 +21,21 @@ const Benefits = () => {
           title="Chat Smarter, Not Harder with Brainwave"
         />
 
-        <div className="flex flex-wrap gap-10 mb-10">
+        <motion.div
+          className="flex flex-wrap gap-10 mb-10"
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={staggerContainer.viewport}
+        >
           {benefits.map((item) => (
-            <div
+            <motion.div
               className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
               style={{
                 backgroundImage: `url(${item.backgroundUrl})`,
               }}
               key={item.id}
+              variants={staggerItem}
             >
               <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
                 <h5 className="h5 mb-5">{item.title}</h5>
@@ -63,9 +74,9 @@ const Benefits = () => {
               </div>
 
               <ClipPath />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </Section>
   );

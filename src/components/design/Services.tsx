@@ -1,6 +1,7 @@
 import { brainwaveWhiteSymbol, gradient, play } from "../../assets";
 import ChatBubbleWing from "../../assets/svg/ChatBubbleWing";
 
+/* Services section: background gradient, mock chat bubbles (PhotoChatMessage, VideoChatMessage), and video progress bar. */
 export const Gradient = () => {
   return (
     <div className="absolute top-0 -left-[10rem] w-[56.625rem] h-[56.625rem] opacity-50 mix-blend-color-dodge pointer-events-none">

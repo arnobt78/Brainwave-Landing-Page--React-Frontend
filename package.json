@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^11.11.17",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-just-parallax": "^3.1.16",

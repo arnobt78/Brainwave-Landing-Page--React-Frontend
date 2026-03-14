@@ -10,6 +10,7 @@ import { HamburgerMenu } from "./design/Header";
 /**
  * Site header: logo, nav links, CTA, and mobile hamburger menu.
  * Uses scroll-lock when mobile menu is open to prevent background scroll.
+ * Active nav item is determined by location.hash (e.g. #features). onlyMobile items hide on lg+.
  */
 const Header = () => {
   const location = useLocation();
@@ -26,6 +27,7 @@ const Header = () => {
     }
   };
 
+  /* Close menu when a nav link is clicked (mobile). Enables scroll again. */
   const handleClick = () => {
     if (!openNavigation) return;
     enablePageScroll();

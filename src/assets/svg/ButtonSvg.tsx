@@ -1,6 +1,6 @@
 /**
- * ButtonSvg: gradient border pieces for the Button component.
- * Renders left, top/bottom, and right SVG paths; white mode uses solid fill.
+ * ButtonSvg: gradient border pieces for the Button component. Called as ButtonSvg(white).
+ * Renders left, top/bottom, and right SVG paths; references gradient ids from ButtonGradient (btn-left, btn-top, btn-bottom, btn-right). white=true = solid fill for light backgrounds.
  */
 const ButtonSvg = (white: boolean) => (
   <>

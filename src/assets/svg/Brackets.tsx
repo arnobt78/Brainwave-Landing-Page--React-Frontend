@@ -1,6 +1,6 @@
 /**
- * Renders left or right bracket SVG with gradient stroke.
- * Used in Tagline for section labels.
+ * Renders left or right bracket SVG with gradient stroke. Used in Tagline for section labels.
+ * Each bracket has its own gradient id (brackets-left, brackets-right) to avoid conflicts.
  */
 const brackets = (position: "left" | "right") =>
   position === "left" ? (

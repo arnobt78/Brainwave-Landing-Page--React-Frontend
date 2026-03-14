@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
+/** Vite config: React plugin enables Fast Refresh and JSX. Build output goes to dist/. */
 export default defineConfig({
   plugins: [react()],
 });

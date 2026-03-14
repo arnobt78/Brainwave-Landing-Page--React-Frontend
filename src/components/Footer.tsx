@@ -1,13 +1,21 @@
+import { motion } from "framer-motion";
 import Section from "./Section";
 import { socials } from "../constants";
+import { fadeInUp } from "../lib/motion";
 
 /**
- * Footer: copyright and social links.
+ * Footer: copyright (current year) and social links from constants. Links use rel="noreferrer" for external targets.
  */
 const Footer = () => {
   return (
     <Section crosses className="!px-0 !py-10">
-      <div className="container flex sm:justify-between justify-center items-center gap-10 max-sm:flex-col">
+      <motion.div
+        className="container flex sm:justify-between justify-center items-center gap-10 max-sm:flex-col"
+        initial={fadeInUp.initial}
+        whileInView={fadeInUp.whileInView}
+        viewport={fadeInUp.viewport}
+        transition={fadeInUp.transition}
+      >
         <p className="caption text-n-4 lg:block">
           © {new Date().getFullYear()}. All rights reserved.
         </p>
@@ -25,7 +33,7 @@ const Footer = () => {
             </a>
           ))}
         </ul>
-      </div>
+      </motion.div>
     </Section>
   );
 };

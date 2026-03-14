@@ -1,17 +1,26 @@
+import { motion } from "framer-motion";
 import Section from "./Section";
 import { smallSphere, stars } from "../assets";
 import Heading from "./Heading";
 import PricingList from "./PricingList";
 import { LeftLine, RightLine } from "./design/Pricing";
+import { fadeInDown, fadeInUp } from "../lib/motion";
 
 /**
  * Pricing section: decorative sphere/stars, heading, and pricing cards.
+ * Sphere and stars are decorative (hidden on mobile). PricingList renders tiers from constants; LeftLine/RightLine are decorative.
  */
 const Pricing = () => {
   return (
     <Section className="overflow-hidden" id="pricing">
       <div className="container relative z-2">
-        <div className="hidden relative justify-center mb-[6.5rem] lg:flex">
+        <motion.div
+          className="hidden relative justify-center mb-[6.5rem] lg:flex"
+          initial={fadeInDown.initial}
+          whileInView={fadeInDown.whileInView}
+          viewport={fadeInDown.viewport}
+          transition={fadeInDown.transition}
+        >
           <img
             src={smallSphere}
             className="relative z-1"
@@ -28,18 +37,24 @@ const Pricing = () => {
               alt="Stars"
             />
           </div>
-        </div>
+        </motion.div>
 
         <Heading
           tag="Get started with Brainwave"
           title="Pay once, use forever"
         />
 
-        <div className="relative">
+        <motion.div
+          className="relative"
+          initial={fadeInUp.initial}
+          whileInView={fadeInUp.whileInView}
+          viewport={fadeInUp.viewport}
+          transition={fadeInUp.transition}
+        >
           <PricingList />
           <LeftLine />
           <RightLine />
-        </div>
+        </motion.div>
 
         <div className="flex justify-center mt-10">
           <a

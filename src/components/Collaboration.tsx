@@ -1,17 +1,26 @@
+import { motion } from "framer-motion";
 import { brainwaveSymbol, check } from "../assets";
 import { collabApps, collabContent, collabText } from "../constants";
 import Button from "./Button";
 import Section from "./Section";
 import { LeftCurve, RightCurve } from "./design/Collaboration";
+import { fadeInLeft, fadeInRight } from "../lib/motion";
 
 /**
  * Collaboration section: feature list and app integration wheel with curves.
+ * Left: collabContent list + CTA. Right: circular layout of collabApps (Figma, Notion, etc.) with LeftCurve/RightCurve.
  */
 const Collaboration = () => {
   return (
     <Section crosses>
       <div className="container lg:flex">
-        <div className="max-w-[25rem]">
+        <motion.div
+          className="max-w-[25rem]"
+          initial={fadeInLeft.initial}
+          whileInView={fadeInLeft.whileInView}
+          viewport={fadeInLeft.viewport}
+          transition={fadeInLeft.transition}
+        >
           <h2 className="h2 mb-4 md:mb-8">
             AI Chat App for seamless collaboration
           </h2>
@@ -31,9 +40,15 @@ const Collaboration = () => {
           </ul>
 
           <Button>Try it now</Button>
-        </div>
+        </motion.div>
 
-        <div className="lg:ml-auto xl:w-[38rem] mt-4">
+        <motion.div
+          className="lg:ml-auto xl:w-[38rem] mt-4"
+          initial={fadeInRight.initial}
+          whileInView={fadeInRight.whileInView}
+          viewport={fadeInRight.viewport}
+          transition={fadeInRight.transition}
+        >
           <p className="body-2 mb-8 text-n-4 md:mb-16 lg:mb-32 lg:w-[22rem] lg:mx-auto">
             {collabText}
           </p>
@@ -80,7 +95,7 @@ const Collaboration = () => {
             <LeftCurve />
             <RightCurve />
           </div>
-        </div>
+        </motion.div>
       </div>
     </Section>
   );

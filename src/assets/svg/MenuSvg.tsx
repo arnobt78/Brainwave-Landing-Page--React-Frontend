@@ -3,7 +3,7 @@ export interface MenuSvgProps {
 }
 
 /**
- * Hamburger / X icon for mobile menu toggle.
+ * Hamburger / X icon for mobile menu toggle. Two bars; when openNavigation is true they rotate to form an X.
  */
 const MenuSvg = ({ openNavigation }: MenuSvgProps) => {
   return (

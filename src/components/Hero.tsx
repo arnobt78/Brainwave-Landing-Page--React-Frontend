@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { motion } from "framer-motion";
 import { curve, heroBackground, robot } from "../assets";
 import Button from "./Button";
 import Section from "./Section";
@@ -8,9 +9,11 @@ import { ScrollParallax } from "react-just-parallax";
 import Generating from "./Generating";
 import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
+import { fadeInUp, fadeIn } from "../lib/motion";
 
 /**
  * Hero section: headline, CTA, and hero visual with parallax and notifications.
+ * parallaxRef is passed to BackgroundCircles so MouseParallax can use the container for movement.
  */
 const Hero = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
@@ -24,7 +27,13 @@ const Hero = () => {
       id="hero"
     >
       <div className="container relative" ref={parallaxRef}>
-        <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
+        <motion.div
+          className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]"
+          initial={fadeInUp.initial}
+          whileInView={fadeInUp.whileInView}
+          viewport={fadeInUp.viewport}
+          transition={fadeInUp.transition}
+        >
           <h1 className="h1 mb-6">
             Explore the Possibilities of&nbsp;AI&nbsp;Chatting with{" "}
             <span className="inline-block relative">
@@ -45,8 +54,14 @@ const Hero = () => {
           <Button href="/pricing" white>
             Get started
           </Button>
-        </div>
-        <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
+        </motion.div>
+        <motion.div
+          className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24"
+          initial={fadeIn.initial}
+          whileInView={fadeIn.whileInView}
+          viewport={fadeIn.viewport}
+          transition={{ ...fadeIn.transition, delay: 0.15 }}
+        >
           <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
             <div className="relative bg-n-8 rounded-[1rem]">
               <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
@@ -62,6 +77,7 @@ const Hero = () => {
 
                 <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
 
+                {/* Parallax: elements move at different rates on scroll. isAbsolutelyPositioned = use container for bounds. */}
                 <ScrollParallax isAbsolutelyPositioned>
                   <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
                     {heroIcons.map((icon, index) => (
@@ -99,9 +115,17 @@ const Hero = () => {
           </div>
 
           <BackgroundCircles parallaxRef={parallaxRef} />
-        </div>
+        </motion.div>
 
-        <CompanyLogos className="hidden relative z-10 mt-20 lg:block" />
+        <motion.div
+          className="hidden relative z-10 mt-20 lg:block"
+          initial={fadeInUp.initial}
+          whileInView={fadeInUp.whileInView}
+          viewport={fadeInUp.viewport}
+          transition={{ ...fadeInUp.transition, delay: 0.2 }}
+        >
+          <CompanyLogos />
+        </motion.div>
       </div>
 
       <BottomLine />

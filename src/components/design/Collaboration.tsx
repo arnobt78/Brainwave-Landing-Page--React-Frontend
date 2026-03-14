@@ -1,5 +1,6 @@
 import { curve1, curve2 } from "../../assets";
 
+/* Decorative curve images on either side of the collaboration app wheel (visible on xl). */
 export const RightCurve = () => {
   return (
     <div className="hidden absolute top-1/2 left-full w-[10.125rem] -mt-1 ml-10 pointer-events-none xl:block">

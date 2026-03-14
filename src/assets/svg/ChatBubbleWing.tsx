@@ -3,6 +3,7 @@ export interface ChatBubbleWingProps {
   pathClassName?: string;
 }
 
+/** Tail of a chat bubble. Used in design/Services (PhotoChatMessage, VideoChatMessage). pathClassName can override fill. */
 const ChatBubbleWing = ({ className, pathClassName }: ChatBubbleWingProps) => {
   return (
     <svg

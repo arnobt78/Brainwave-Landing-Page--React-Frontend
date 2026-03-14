@@ -5,7 +5,7 @@ export interface SectionSvgProps {
 }
 
 /**
- * Decorative cross icons for Section when crosses=true.
+ * Decorative cross (plus) icons for Section when crosses=true. crossesOffset is applied as a class (e.g. lg:translate-y-[5.25rem]).
  */
 const SectionSvg = ({ crossesOffset }: SectionSvgProps) => {
   return (

@@ -1,5 +1,6 @@
 import { lines } from "../../assets";
 
+/* Decorative line images to the left and right of the pricing cards (RightLine is mirror with -scale-x-100). */
 export const LeftLine = () => {
   return (
     <div className="hidden lg:block absolute top-1/2 right-full w-[92.5rem] h-[11.0625rem] -translate-y-1/2 pointer-events-none">

@@ -6,6 +6,7 @@ export interface GeneratingProps {
 
 /**
  * “AI is generating” loading pill with spinner icon.
+ * Used in Hero and Services as a mock loading state.
  */
 const Generating = ({ className }: GeneratingProps) => {
   return (

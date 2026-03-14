@@ -1,5 +1,6 @@
 import { background } from "../../assets";
 
+/* Design subcomponents for the full-screen mobile menu overlay (see Header.tsx). */
 /**
  * Background and decorative rings for the mobile hamburger menu overlay.
  */
@@ -34,6 +35,7 @@ export const BackgroundCircles = () => {
 /**
  * Full-screen overlay content when mobile nav is open: background image, rings, lines, circles.
  */
+/** Rendered inside the open nav; pointer-events-none so clicks pass through to nav links. */
 export const HamburgerMenu = () => {
   return (
     <div className="absolute inset-0 pointer-events-none lg:hidden">

@@ -3,6 +3,7 @@ import { MouseParallax } from "react-just-parallax";
 
 import PlusSvg from "../../assets/svg/PlusSvg";
 
+/* Hero-specific decorations: window chrome (Gradient), bottom line + plus icons, rings, and mouse-reactive circles. */
 export const Gradient = () => {
   return (
     <>
@@ -39,6 +40,7 @@ export interface BackgroundCirclesProps {
   parallaxRef: React.RefObject<HTMLDivElement | null>;
 }
 
+/** Colored orbs that react to mouse via MouseParallax. parallaxRef = container from Hero. mounted avoids hydration mismatch by animating only after client mount. */
 export const BackgroundCircles = ({ parallaxRef }: BackgroundCirclesProps) => {
   const [mounted, setMounted] = useState(false);
 

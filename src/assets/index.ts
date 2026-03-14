@@ -1,3 +1,7 @@
+/**
+ * Central asset barrel: imports images/SVGs and re-exports them. Constants and components import from here.
+ * Vite resolves these to hashed URLs in production. Add new assets here and in constants if needed.
+ */
 import brainwave from "./brainwave.svg";
 import check from "./check.svg";
 import brainwaveSymbol from "./brainwave-symbol.svg";

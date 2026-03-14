@@ -2,6 +2,7 @@ export interface PlusSvgProps {
   className?: string;
 }
 
+/** Small plus/cross icon. Used in SectionSvg (section decorations) and Hero BottomLine. */
 const PlusSvg = ({ className = "" }: PlusSvgProps) => {
   return (
     <svg className={className} width="11" height="11" fill="none">
